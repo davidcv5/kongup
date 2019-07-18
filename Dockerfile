@@ -8,6 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o kongup
 
 FROM alpine:3.10
 RUN apk --no-cache add ca-certificates
-WORKDIR /root/
-COPY --from=build /kongup .
-ENTRYPOINT ["./kongup"]
+COPY --from=build /kongup/kongup /usr/local/bin
+ENTRYPOINT ["kongup"]
