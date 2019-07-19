@@ -25,3 +25,4 @@ kongup
 dist/
 tmp/
 main
+.vscode

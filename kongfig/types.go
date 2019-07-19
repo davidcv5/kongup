@@ -42,8 +42,10 @@ type Plugin struct {
 
 // PluginAttributes represents the attributes of a Kong Plugin < 0.14
 type PluginAttributes struct {
-	Enabled bool               `yaml:",omitempty" json:"enabled"`
-	Config  kong.Configuration `yaml:",omitempty" json:"config"`
+	Enabled   bool               `yaml:",omitempty" json:"enabled"`
+	Config    kong.Configuration `yaml:",omitempty" json:"config"`
+	Protocols []string           `yaml:"protocols,omitempty" json:"protocols"`
+	RunOn     *string            `yaml:"run_on,omitempty" json:"run_on,omitempty"`
 }
 
 // Consumer represents a consumer in Kong < 0.14

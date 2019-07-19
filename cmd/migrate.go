@@ -58,7 +58,7 @@ func init() {
 			"Use '-' to read from stdin.")
 
 	migrateCmd.Flags().StringVarP(&deckOut, "output-file", "o",
-		"deck.yaml", "write Kong configuration to FILE in deck format."+
+		"kong.yaml", "write Kong configuration to FILE in deck format."+
 			"Use '-' to write to stdout.")
 
 	migrateCmd.Flags().StringSliceVar(&tags,

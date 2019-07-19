@@ -97,6 +97,8 @@ func mapPlugin(plugins *[]kongfig.Plugin) ([]*deck.Plugin, error) {
 		plugin := &deck.Plugin{}
 		plugin.Name = kong.String(p.Name)
 		plugin.Enabled = kong.Bool(p.Attributes.Enabled)
+		plugin.Protocols = kong.StringSlice(p.Attributes.Protocols...)
+		plugin.RunOn = p.Attributes.RunOn
 		p.Attributes.Config.DeepCopyInto(&plugin.Config)
 		result = append(result, plugin)
 	}
